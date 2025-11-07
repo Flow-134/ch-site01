@@ -9,12 +9,13 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 20px 100px;
-    background-color: rgb(27, 201, 65);
+    background-color: rgb(0, 102, 255);
     height: 100px;
     width: 100vw;
 }
 
-.logo {width: 150px;}
+.logo {width: 100px;
+}
 
 .flex1 {
     display: flex;
@@ -26,6 +27,45 @@ header {
     text-decoration: none;
     color: black;
     font-size: 1.1em;
+}
+
+img {
+    height: 100px;
+    width: 100px;
+}
+
+.titulo {
+    margin-left: 205px;
+    width: 230px;
+    height: 115px;
+}
+
+.container input {
+    padding: 8px;
+}
+
+.btn {
+    padding: 8px 50px;
+    border-radius: 20px;
+    background-color: black;
+    
+}
+
+.btn a {
+    text-decoration: none;
+    color: white;
+}
+
+
+
+.btn:hover{
+    transform: scale(1.1);
+    background-color: white;
+    
+}
+
+.btn a:hover {
+    color: black;
 }
 
 
