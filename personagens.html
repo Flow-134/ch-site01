@@ -10,7 +10,7 @@
 
 </head>
 
-<body>
+<body class="personagens_body">
     <header>
         <img src="assets/img/image.png" alt="Logo Blue Lock">
         <nav>
@@ -25,23 +25,100 @@
                     <a href="pagina2.html" class="item_nav">Login</a>
                 </li>
                 <li>
-                    <a href="personagens.html" class="item_nav" style="color: blue;"> Personagens</a>
+                    <a href="personagens.html" class="item_nav"> Personagens</a>
+                </li>
+                <li>
+                    <a href="contatos.html" class="item_nav">Contatos</a>
                 </li>
             </ul>
         </nav>
     </header>
     <img src="assets/img/Tituloprapag.png" alt="" class="titulo">
 
-    <h2 id="TP">Yoichi Isagi:</h2>
-    <h4>Habilidades:
-        <ul class="Habilidades">
-            <li>Posicionamento</li>
-            <li>Visão de Jogo</li>
-            <li>Finalização</li>
-            <li>Drible</li>
-        </ul>
-    </h4>
-    <img class="card1"src="assets/img/Isagi-Yoichi.png" alt="">
+    <!-- agora as personagens estão dentro de um container para ficar lado a lado -->
+    <div class="personagens_container">
+        <!-- Isagi: agrupa imagem e detalhes -->
+        <div class="personagem">
+            <img class="card1" src="assets/img/Isagi-Yoichi.png" alt="Yoichi Isagi">
+            <div class="detalhes isagi">
+                <h2 id="TP">Yoichi Isagi:</h2>
+                <h4>Habilidades:</h4>
+                <ul class="Habilidades">
+                    <li>Posicionamento</li>
+                    <li>Visão de Jogo</li>
+                    <li>Finalização</li>
+                    <li>Drible</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Nagi: agrupa imagem e detalhes -->
+        <div class="personagem">
+            <img class="card2" src="assets/img/Nagi.jpg" alt="Seishu Nagi">
+            <div class="detalhes nagi">
+                <h2 id="Nagi">Seishiro Nagi:</h2>
+                <h4>Habilidades:</h4>
+                <ul class="Habilidades">
+                    <li>Finalização potente</li>
+                    <li>Controle de bola</li>
+                    <li>Visão de jogo</li>
+                    <li>Força física</li>
+                </ul>
+            </div>
+        </div>
+        <div class="personagem">
+            <img src="assets/img/Bachira.jpg" alt="">
+            <div class="detalhes bachira">
+                <h2 id="Bachira">Bachira Meguru</h2>
+                <h4>Habilidades:</h4>
+                <ul class="Habilidades">
+                    <li>Drible imprevisível</li>
+                    <li>Criatividade ofensiva</li>
+                    <li>Visão espacial</li>
+                    <li>Finalização acrobática</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    
+    <script>
+        
+        document.querySelectorAll('.detalhes').forEach(function(det) {
+            const h4 = det.querySelector('h4');
+            if (!h4) return;
+            // torna acessível como botão
+            h4.setAttribute('role', 'button');
+            h4.setAttribute('tabindex', '0');
+            h4.setAttribute('aria-expanded', 'true');
+
+            function toggle() {
+                det.classList.toggle('collapsed');
+                const expanded = det.classList.contains('collapsed') ? 'false' : 'true';
+                h4.setAttribute('aria-expanded', expanded);
+            }
+
+            h4.addEventListener('click', toggle);
+            h4.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    toggle();
+                }
+            });
+        });
+    </script>
+
+    <!-- RODAPÉ -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-inner">
+            <p>© 2025 Anime Blue Lock. Todos os direitos reservados.</p>
+            <nav class="footer-nav" aria-label="Links do rodapé">
+                <a href="index.html">Home</a> ·
+                <a href="personagens.html">Personagens</a> ·
+                <a href="contatos.html">Contatos</a>
+            </nav>
+        </div>
+    </footer>
 </body>
 
 </html>

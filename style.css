@@ -1,0 +1,609 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 4rem; 
+    background-color: rgb(0, 102, 255);
+    
+    
+}
+
+
+@media (max-width: 800px) {
+    header {
+        padding: 12px 1rem;
+    }
+}
+
+.logo {
+    width: 100px;
+}
+
+.flex1 {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+.item_nav {
+    text-decoration: none;
+    color: black;
+    font-size: 1.1em;
+}
+
+img {
+    height: 100px;
+    width: 100px;
+}
+
+.titulo {
+    margin: 1rem auto;
+    width: 230px;
+    height: 115px;
+    display: block;
+}
+
+/* Container das personagens: largura máxima, centralizado e com padding lateral */
+.personagens_container {
+    max-width: 1100px; /* limita largura para não ficar "muito pros lados" */
+    margin: 1.5rem auto; /* centraliza horizontalmente */
+    padding: 0 1rem; /* evita que elementos encostem nas bordas da janela */
+    gap: 1rem; 
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.container input {
+    padding: 8px;
+}
+
+.btn {
+    padding: 8px 50px;
+    border-radius: 20px;
+    background-color: black;
+    color: white;
+    transition: 0.5s;
+}
+
+.btn a {
+    text-decoration: none;
+    color: white;
+}
+
+
+
+.btn:hover {
+    transform: scale(1.1);
+    background-color: white;
+    color: black;
+    transition: 0.5s;
+
+}
+
+.btn a:hover {
+    color: rgb(255, 255, 255);
+}
+
+li {
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    gap: 10px;
+}
+
+.bodypage2 {
+    background-image: url(../img/Wallpaper.png);
+    background-size: 100%;
+}
+
+/* .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 100px auto 0 auto; 
+    border: 10px solid #000000;
+    border-radius: 20px;
+    background-color: rgb(0, 102, 255);
+    background-size: 100%;
+    align-items: center;
+    height: 50vh;
+    width: 30vw;
+    } */
+
+input {
+    border-radius: 20px;
+    margin: 1px;
+}
+
+#TP {
+    margin-bottom: 20px;
+    
+}
+.card1 {
+    
+    margin-left: 0;
+    width: auto;
+    height: auto;
+    max-width: 320px;
+    border:solid black;
+    border-radius: 15px;
+}
+
+.card2 {
+    margin-left: 0;
+    width: auto;
+    height: auto;
+    max-width: 320px;
+    border:solid black;
+    border-radius: 15px;
+}
+
+/* #texto {
+    background-image: url(../img/fundo.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+} */
+#texto {
+    
+    position: relative; 
+    z-index: 10;
+    
+    
+    background-color: rgba(0, 0, 0, 0.7); 
+    color: rgb(0, 153, 255); /* Cor do texto */
+    
+    padding: 20px;
+    margin: 40px auto; 
+    max-width: 1000px; 
+    border-radius: 8px;
+    font-size: 21px;
+}
+
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+
+#Body_About {
+    
+    background-image: url(../img/fundo.jpg); 
+    
+    
+    background-size: cover; 
+    
+    background-position: center center; 
+    
+    background-repeat: no-repeat;
+    
+    background-attachment: fixed; 
+}
+
+.personagem {
+    display: flex;
+    align-items: center; 
+    gap: 1rem; /* reduz gap interno do card */
+    margin: 1rem 0;
+    flex-wrap: wrap;
+
+    transition: transform 300ms ease, box-shadow 300ms ease;
+    transform-origin: center top;
+}
+.personagem img {
+    max-width: 320px;
+    width: auto;
+    height: auto;
+    border-radius: 6px;
+
+    transition: transform 300ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .personagem:hover {
+        transform: translateY(-8px) scale(1.07); /* sobe e aumenta 7% */
+        box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+        z-index: 5;
+    }
+    .personagem:hover img {
+        transform: scale(1.06); 
+    }
+}
+
+.personagem .detalhes {
+    min-width: 150px; 
+    flex: 1 1 auto; 
+    padding: 0.25rem 0; 
+}
+.personagem .Habilidades {
+    margin: 0.5rem 0 0 1rem;
+}
+
+/* Container para colocar as personagens lado a lado (gap reduzido) */
+.personagens_container {
+    /* gap original reduzido em 100px via calc; fallback para 16px se calc resultar inválido */
+    gap: calc(2rem - 100px);
+    gap: 1rem; /* menor espaçamento entre colunas */
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+.personagens_container .personagem {
+    flex: 1 1 320px; 
+    margin: 0; 
+}
+
+@media (max-width: 800px) {
+    .personagens_container {
+        flex-direction: column;
+    }
+    .personagem {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .personagem .Habilidades {
+        margin-left: 0;
+    }
+}
+
+
+img, .card1, .card2 {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    width: min(95%, 1100px); 
+    margin: 2rem auto;
+}
+
+
+:root {
+    font-size: 16px; 
+}
+@media (max-width: 1200px) {
+    :root { font-size: 15px; }
+}
+@media (max-width: 800px) {
+    :root { font-size: 14px; }
+}
+
+
+@media (max-width: 800px) {
+    .personagens_container {
+        flex-direction: column;
+        gap: 0.8rem;
+        padding: 0 1rem;
+    }
+    .personagem {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .personagem img {
+        max-width: 320px;
+        width: 80%;
+    }
+    .personagem .detalhes {
+        min-width: unset;
+        width: 100%;
+    }
+}
+
+
+@media (min-width: 801px) and (max-width: 1200px) {
+    .personagens_container {
+        gap: 1rem;
+    }
+    .personagem img {
+        max-width: 280px;
+        width: auto;
+    }
+}
+
+
+@media (min-width: 1201px) {
+    .personagens_container {
+        gap: 2rem;
+    }
+    .personagem img {
+        max-width: 320px;
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .personagem { transition: transform .3s ease, box-shadow .3s ease; }
+    .personagem:hover { transform: translateY(-6px) scale(1.05); box-shadow: 0 12px 28px rgba(0,0,0,0.18); }
+}
+
+
+@media (max-width: 800px) {
+    .hide-on-mobile { display: none !important; }
+}
+
+
+.detalhes h4 {
+    margin: 0 0 0.25rem 0;
+    font-weight: 600;
+}
+
+
+.detalhes .Habilidades {
+    list-style: none;
+    padding: 0.4rem 0.6rem;
+    border-radius: 8px;
+    margin: 0.4rem 0 0 0;
+    transition: background-color 200ms ease;
+}
+
+/* Itens individuais */
+.detalhes .Habilidades li {
+    padding: 0.35rem 0;
+    transition: transform 150ms ease, color 150ms ease; 
+    transform: translate3d(0,0,0); 
+    will-change: transform, color;
+}
+
+/* Tema Isagi — azul */
+.detalhes.isagi .Habilidades {
+    background-color: rgba(11,110,255,0.06); 
+    border-left: 4px solid #0b6eff;
+}
+.detalhes.isagi .Habilidades li {
+    color: #0b6eff;
+}
+.detalhes.isagi .Habilidades li:hover {
+    transform: translate3d(6px, 0, 0);
+    color: #064fc1;
+    font-weight: 600;
+}
+
+/* Tema Nagi — dourado */
+.detalhes.nagi .Habilidades {
+    background-color: rgba(207,162,26,0.06); 
+    border-left: 4px solid #cfa21a;
+}
+.detalhes.nagi .Habilidades li {
+    color: #cfa21a;
+}
+.detalhes.nagi .Habilidades li:hover {
+    transform: translate3d(6px, 0, 0);
+    color: #a77f08;
+    font-weight: 600;
+}
+
+/* Aplica o mesmo estilo do Nagi também ao Bachira */
+.detalhes.bachira .Habilidades {
+    background-color: rgba(207,162,26,0.06); /* fundo suave dourado (igual ao Nagi) */
+    border-left: 4px solid #cf1a1a;
+}
+.detalhes.bachira .Habilidades li {
+    color: #ff0000;
+}
+.detalhes.bachira .Habilidades li:hover {
+    transform: translateX(6px);
+    color: #a70808;
+    font-weight: 600;
+}
+
+
+.detalhes.collapsed .Habilidades {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: opacity 180ms ease, height 180ms ease;
+}
+
+/* Pequeno ajuste para foco por teclado */
+.detalhes h4:focus {
+    outline: 2px solid rgba(0,102,255,0.6);
+    outline-offset: 3px;
+}
+
+
+.container {
+    gap: 10px;
+    width: min(95%, 900px);
+    max-width: 900px;
+    margin: 1.5rem auto;
+    padding: 1rem; 
+    box-sizing: border-box;
+    border: 10px solid #000000;
+    border-radius: 20px;
+    background-color: rgb(0, 102, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto; 
+    height: 520px;
+}
+
+
+body.bodypage2 .container {
+    max-width: 700px;
+    padding: 1.2rem;
+}
+
+/* Ajustes responsivos: em telas pequenas reduz padding e largura */
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+        padding: 0.8rem;
+        margin: 1rem auto;
+        border-width: 6px;
+    }
+}
+
+/* Promove animações para GPU e indica ao navegador o que vai mudar */
+.personagem,
+.personagem img,
+.detalhes .Habilidades li {
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+/* imagem: usar transform 3D ao hover para acelerar */
+@media (hover: hover) and (pointer: fine) {
+    .personagem:hover img {
+        transform: translate3d(0,0,0) scale(1.06); /* GPU-accelerated */
+    }
+}
+
+/* Itens individuais: transição menor e apenas transform/color */
+.detalhes .Habilidades li {
+    padding: 0.35rem 0;
+    transition: transform 150ms ease, color 150ms ease; /* mais rápido e suave */
+    transform: translate3d(0,0,0); /* inicial no plano 3D */
+    will-change: transform, color;
+}
+
+/* Use translate3d para mover itens (GPU) em vez de translateX puro */
+.detalhes.isagi .Habilidades li:hover,
+.detalhes.nagi .Habilidades li:hover {
+    transform: translate3d(6px, 0, 0);
+    /* mantém mudança de cor rápida */
+    transition: transform 150ms ease, color 150ms ease;
+}
+
+/* Opcional: reduzir um pouco a sombra do card para menos repaints */
+.personagem:hover {
+    box-shadow: 0 10px 18px rgba(0,0,0,0.18); /* menos pesado que antes */
+}
+
+/* wrapper responsivo 16:9 para iframes */
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1100px; /* padrão */
+    margin: 1rem auto;
+    padding-bottom: 56.25%; /* 16:9 ratio */
+    height: 0;
+    overflow: hidden;
+}
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* aumenta o tamanho para vídeos que precisam ser maiores */
+.video-wrapper.large {
+    max-width: 1400px; /* aumente esse valor conforme desejar */
+}
+
+/* opcional: usar largura total da área disponível (sem limite) */
+.video-wrapper.full {
+    max-width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/* ajuste responsivo para telas muito largas vs pequenas */
+@media (max-width: 1200px) {
+    .video-wrapper.large {
+        max-width: 100%; /* em telas menores, ocupa 100% */
+    }
+}
+
+/* Estilos do rodapé */
+.site-footer {
+    background: #021a40; /* tom escuro combinando com azul */
+    color: #dfeeff;
+    padding: 1.2rem 0;
+    margin-top: 2rem;
+    border-top: 4px solid rgba(255,255,255,0.03);
+}
+.site-footer .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.site-footer p {
+    margin: 0;
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+.site-footer .footer-nav {
+    font-size: 0.95rem;
+}
+.site-footer .footer-nav a {
+    color: #cfe3ff;
+    text-decoration: none;
+    margin: 0 0.3rem;
+}
+.site-footer .footer-nav a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* Responsividade do rodapé */
+@media (max-width: 600px) {
+    .site-footer .footer-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+    .site-footer .footer-nav {
+        margin-top: 0.5rem;
+    }
+}
+
+/* Imagem arredondada usada em contatos */
+.rounded-image {
+    display: block;
+    max-width: 100%;
+    width: min(420px, 90%); /* limita tamanho e mantém responsivo */
+    margin: 0.8rem 0 0 0; /* remove centralização (antes: auto) */
+    border-radius: 12px; /* 12px = cantos arredondados; use 50% para círculo */
+    box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+    object-fit: cover;
+}
+
+/* opção: imagem completamente circular
+.rounded-image.circle {
+    border-radius: 50%;
+}
+*/
+
+/* Garante que o rodapé fique sempre no final da página */
+html, body {
+    height: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Faz o conteúdo principal crescer para ocupar o espaço disponível.
+   Use selectors que já existem nas suas páginas para evitar mudanças no HTML. */
+main, .container, .personagens_container {
+    flex: 1 0 auto;
+}
+
+/* Se houver wrappers de vídeo ou outros blocos que não devam crescer,
+   não os incluímos aqui para não alterar o layout. */
+
+/* Força o rodapé a empurrar para baixo quando houver espaço */
+.site-footer {
+    margin-top: auto;
+}
